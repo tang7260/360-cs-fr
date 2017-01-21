@@ -34,6 +34,13 @@
         img {
             margin-left: -17px;
         }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: #333;
+            background-image: linear-gradient(to right, #cccccc, #aaaaaa, #cccccc);
+        }
     </style>
 </head>
 
@@ -136,337 +143,135 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div>
-                            <div class="card card-nav-tabs card-plain">
-                                <div class="card-header" data-background-color="">
-                                    <div class="nav-tabs-navigation">
-                                        <div class="nav-tabs-wrapper">
-                                            <ul class="nav nav-tabs">
-                                                <li>
-                                                    <a href="#profile">
-                                                        <i class="material-icons">bug_report</i> Select
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                                <li class="">
-                                                    <a href="#messages">
-                                                        <i class="material-icons">code</i> Delete Select
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                                <li class="">
-                                                    <a href="#settings">
-                                                        <i class="material-icons">cloud</i> Delete All
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                                <li class="">
-                                                    <a href="#settings">
-                                                        <i class="material-icons">cloud</i> Get Zip
-                                                        <div class="ripple-container"></div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
+
+                        <div class="card card-nav-tabs card-plain">
+                            <div class="card-header" data-background-color="">
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper">
+                                        <ul class="nav nav-tabs">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons">done_all</i> Select
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="material-icons">select_all</i> Select All
+                                                    <div class="rip ple-container"></div>
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#">
+                                                    <i class="material-icons">delete</i> Delete Select
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#">
+                                                    <i class="material-icons">delete_forever</i> Delete All
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#">
+                                                    <i class="material-icons">get_app</i> Download
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#">
+                                                    <i class="material-icons">archive</i> Get Zip
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-lg-6 col-md-12">
-                                <div class="card card-nav-tabs card-plain">
-                                    <div class="card-header" data-background-color="purple">
-                                        <div class="nav-tabs-navigation">
-                                            <div class="nav-tabs-wrapper">
-                                                <span class="nav-tabs-title">Tasks:</span>
-                                                <ul class="nav nav-tabs" data-tabs="tabs">
-                                                    <li class="active">
-                                                        <a href="#profile" data-toggle="tab">
-                                                            <i class="material-icons">bug_report</i> Bugs
-                                                            <div class="ripple-container"></div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="#messages" data-toggle="tab">
-                                                            <i class="material-icons">code</i> Website
-                                                            <div class="ripple-container"></div>
-                                                        </a>
-                                                    </li>
-                                                    <li class="">
-                                                        <a href="#settings" data-toggle="tab">
-                                                            <i class="material-icons">cloud</i> Server
-                                                            <div class="ripple-container"></div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-content">
-                                        <div class="tab-content">
-                                            <div class="tab-pane active" id="profile">
-                                                <table class="table">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="optionsCheckboxes" checked>
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                            <td class="td-actions text-right">
-                                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                    <i class="material-icons">edit</i>
-                                                                </button>
-                                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                    <i class="material-icons">close</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="optionsCheckboxes">
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                            <td class="td-actions text-right">
-                                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                    <i class="material-icons">edit</i>
-                                                                </button>
-                                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                    <i class="material-icons">close</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="optionsCheckboxes">
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                                                            </td>
-                                                            <td class="td-actions text-right">
-                                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                    <i class="material-icons">edit</i>
-                                                                </button>
-                                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                    <i class="material-icons">close</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="optionsCheckboxes" checked>
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                                            <td class="td-actions text-right">
-                                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                    <i class="material-icons">edit</i>
-                                                                </button>
-                                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                    <i class="material-icons">close</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="tab-pane" id="messages">
-                                                <table class="table">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="optionsCheckboxes" checked>
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                                                            </td>
-                                                            <td class="td-actions text-right">
-                                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                    <i class="material-icons">edit</i>
-                                                                </button>
-                                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                    <i class="material-icons">close</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="optionsCheckboxes">
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                            <td class="td-actions text-right">
-                                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                    <i class="material-icons">edit</i>
-                                                                </button>
-                                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                    <i class="material-icons">close</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="tab-pane" id="settings">
-                                                <table class="table">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="optionsCheckboxes">
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                            <td class="td-actions text-right">
-                                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                    <i class="material-icons">edit</i>
-                                                                </button>
-                                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                    <i class="material-icons">close</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="optionsCheckboxes" checked>
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                                                            </td>
-                                                            <td class="td-actions text-right">
-                                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                    <i class="material-icons">edit</i>
-                                                                </button>
-                                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                    <i class="material-icons">close</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="optionsCheckboxes">
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                            <td class="td-actions text-right">
-                                                                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                                                                    <i class="material-icons">edit</i>
-                                                                </button>
-                                                                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                                    <i class="material-icons">close</i>
-                                                                </button>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="display:none;" id="video1">
-                                <video class="lg-video-object lg-html5" controls preload="none">
-                                    <source src="media/demo1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
-                                </video>
-                            </div>
-                            <ul id="ul-li">
-                                <li data-src="media/000_result.jpg">
+                        </div>
+                        <div style="display:none;" id="video1">
+                            <video class="lg-video-object lg-html5" controls preload="none">
+                                <source src="media/demo1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                        <ul id="lightGallery">
+                            <li class="col-sm-3" data-src="media/000_result.jpg">
+<!--                                <div class="col-sm-3">-->
                                     <img class="img-rounded img-responsive img-raised" src="media/000_result.jpg" />
                                     <br>
-                                </li>
+<!--                                    <hr>-->
+<!--                                </div>-->
+                            </li>
 
-                                <li data-src="media/001_result.jpg">
-                                    <img class="img-rounded img-responsive img-raised" src="media/003_result.jpg" />
-                                    <br>
-                                </li>
+                            <li class="col-sm-3" data-src="media/001_result.jpg">
+                                <img class="img-rounded img-responsive img-raised" src="media/003_result.jpg" />
+                                <br>
 
-                                <li data-src="media/003_result.jpg">
-                                    <img class="img-rounded img-responsive img-raised" src="media/003_result.jpg" />
-                                    <br>
-                                </li>
+                            </li>
 
-                                <li data-src="media/004_result.jpg">
-                                    <img class="img-rounded img-responsive img-raised" src="media/004_result.jpg" />
-                                    <br>
-                                </li>
+                            <li class="col-sm-3" data-src="media/003_result.jpg">
+                                <img class="img-rounded img-responsive img-raised" src="media/003_result.jpg" />
+                                <br>
 
-                                <li data-poster="media/demo1.mp4_th.jpg" data-sub-html="360 demo video " data-html="#video1">
-                                    <img class="img-rounded img-responsive img-raised" src="media/demo1.mp4_th.jpg" />
-                                    <br>
-                                </li>
-                            </ul>
-                        </div>
+                            </li>
+
+                            <li class="col-sm-3" data-src="media/004_result.jpg">
+                                <img class="img-rounded img-responsive img-raised" src="media/004_result.jpg" />
+                                <br>
+
+                            </li>
+
+                            <li class="col-sm-3" data-poster="media/demo1.mp4_th.jpg" data-sub-html="360 demo video " data-html="#video1">
+                                <img class="img-rounded img-responsive img-raised" src="media/demo1.mp4_th.jpg" />
+                                <br>
+
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </div>
 
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <nav class="pull-left">
-                            <ul>
-                                <li>
-                                    <a href="index.html">
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="index.html">
 	                                Home
 	                            </a>
-                                </li>
-
-                            </ul>
-                        </nav>
-                        <p class="copyright pull-right">
-                            &copy;
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script> <a href="#">360</a> Camera System for surveillance with face recognition
-                        </p>
-                    </div>
-                </footer>
-            </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> <a href="#">360</a> Camera System for surveillance with face recognition
+                    </p>
+                </div>
+            </footer>
         </div>
+    </div>
 
-        <!-- Modal Core -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-info btn-simple">Save</button>
-                    </div>
+    <!-- Modal Core -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info btn-simple">Save</button>
                 </div>
             </div>
+        </div>
+    </div>
 
 
 </body>
@@ -497,7 +302,7 @@
 <script src="assets/js/lg-hash.js"></script>
 <script src="assets/js/lg-pager.js"></script>
 <script>
-    $('#ul-li').lightGallery();
+    $('#lightGallery').lightGallery();
 </script>
 
 </html>

@@ -337,10 +337,12 @@
         });
         $('#changeApiBtn').click(function () {
             var url = $('#apiUrl').val();
+            $('#sysControl').hide(500);
             changeApiUrl(url);
             demo.showAlert('top', 'center', 'success', 'The Camera API URL has been changed', 'notifications', 100);
         });
         $('#defaultApiBtn').click(function () {
+            $('#sysControl').hide(500);
             changeApiUrl("raspberrypi.local/picam");
             demo.showAlert('top', 'center', 'success', 'The Camera API has been reverted to the default API', 'notifications', 100);
         });
@@ -493,6 +495,7 @@
         $('#cam').hide(500);
         $('#cap').hide(500);
         $('#video').hide(500);
+        $('#sysControl').hide(500);
         getApiUrl();
         $('#apiUrl').val(apiUrl);
         initcam();
