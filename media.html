@@ -20,6 +20,9 @@
     <link href="assets/css/material-dashboard.css" rel="stylesheet" />
 
     <link href="assets/css/loading.css" rel="stylesheet" />
+
+    <link href="assets/css/card.css" rel="stylesheet" />
+
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
@@ -143,7 +146,6 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-
                         <div class="card card-nav-tabs card-plain">
                             <div class="card-header" data-background-color="">
                                 <div class="nav-tabs-navigation">
@@ -190,42 +192,36 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="display:none;" id="video1">
-                            <video class="lg-video-object lg-html5" controls preload="none">
-                                <source src="media/demo1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
-                            </video>
+                        <div id="videoDiv">
+                            <div style="display:none;" id="demo_video">
+                                <video class="lg-video-object lg-html5" controls preload="none">
+                                    <source src="media/demo1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+                                </video>
+                            </div>
                         </div>
+                        
                         <ul id="lightGallery">
-                            <li class="col-sm-3" data-src="media/000_result.jpg">
-<!--                                <div class="col-sm-3">-->
-                                    <img class="img-rounded img-responsive img-raised" src="media/000_result.jpg" />
-                                    <br>
-<!--                                    <hr>-->
-<!--                                </div>-->
+                            <li class="col-sm-4" data-src="media/003_result.jpg">
+                                <div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">
+                                    <img style="margin-left:0px;" class=" img-responsive " src="media/003_result.jpg" />
+                                    <div style="margin-left:15px">
+                                        <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">003_result.jpg<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">photo</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 1.23 Mb</label><label style="color:#383838;font-weight:500;margin-left:5px;"> </label><br>
+                                        <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 2017-1-16, 23:40:26</label>
+                                        </h5>
+                                    </div>
+                                </div>
                             </li>
+                            
+                            <li class="col-sm-4" data-poster="media/demo1.mp4_th.jpg" data-sub-html="360 demo video " data-html="#demo_video">
+                                <div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">
+                                    <img style="margin-left:0px;" class="img-responsive " src="media/demo1.mp4_th.jpg" />
 
-                            <li class="col-sm-3" data-src="media/001_result.jpg">
-                                <img class="img-rounded img-responsive img-raised" src="media/003_result.jpg" />
-                                <br>
-
-                            </li>
-
-                            <li class="col-sm-3" data-src="media/003_result.jpg">
-                                <img class="img-rounded img-responsive img-raised" src="media/003_result.jpg" />
-                                <br>
-
-                            </li>
-
-                            <li class="col-sm-3" data-src="media/004_result.jpg">
-                                <img class="img-rounded img-responsive img-raised" src="media/004_result.jpg" />
-                                <br>
-
-                            </li>
-
-                            <li class="col-sm-3" data-poster="media/demo1.mp4_th.jpg" data-sub-html="360 demo video " data-html="#video1">
-                                <img class="img-rounded img-responsive img-raised" src="media/demo1.mp4_th.jpg" />
-                                <br>
-
+                                    <div style="margin-left:15px">
+                                        <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">demo1.mp4<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">videocam</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 40.9 Mb</label><label style="color:#383838;font-weight:500;margin-left:5px;"></label><br>
+                                        <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 2017-01-16, 23:18:17</label>
+                                        </h5>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -253,26 +249,6 @@
             </footer>
         </div>
     </div>
-
-    <!-- Modal Core -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-info btn-simple">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 </body>
 
@@ -302,7 +278,119 @@
 <script src="assets/js/lg-hash.js"></script>
 <script src="assets/js/lg-pager.js"></script>
 <script>
-    $('#lightGallery').lightGallery();
+    var apiUrl = "";
+    var path = "/picam/";
+    var fullPath = "";
+
+    $(document).ready(function () {
+        getApiUrl();
+        get_media();
+    });
+
+    function get_media() {
+        $.ajax({
+            url: fullPath + "media/get_file.php",
+            dataType: 'json',
+            success: function (json) {
+                var jsonLength = json["filename"].length;
+                    for (var i in json["filename"]) {
+                        var type = json["filetype"][i] == "video" ? "videocam" : "photo" ;
+                        var liheader = '<li class="col-sm-4" data-src="'+ fullPath +'get_media.php?type='+ json["filetype"][i] + '&file=' + json["filename"][i] +'">';
+                        var videoDiv = '<div style="display:none;" id="video'+ i +'">\
+                                <video class="lg-video-object lg-html5" controls preload="none">\
+                                    <source src="'+ fullPath +'get_media.php?type='+ json["filetype"][i] + '&file=' + json["filename"][i] +'" type="video/mp4"> Your browser does not support HTML5 video.\
+                                </video>\
+                            </div>';
+                        if(type=="videocam"){
+                            liheader = '<li class="col-sm-4" data-poster="'+ fullPath +'get_media.php?type='+ json["filetype"][i] + '&file='+ json["thimg"][i] +'" data-sub-html="'+ json["filename"][i] +'" data-html="#video'+ i +'">';
+                            $(videoDiv).appendTo($('#videoDiv'));
+                        }
+                        var li = liheader + 
+                                '<div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">\
+                                    <img style="margin-left:0px;" class=" img-responsive " src="'+ fullPath +'get_media.php?type='+ json["filetype"][i] + '&file='+ json["thimg"][i] +'" />\
+                                    <div style="margin-left:15px">\
+                                        <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">'+ json["filename"][i] +'<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">'+ type +'</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;">'+ json["filesize"][i] +'</label><label style="color:#383838;font-weight:500;margin-left:5px;"></label><br>\
+                                        <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;">'+ json["filetime"][i] +'</label>\
+                                        </h5>\
+                                    </div>\
+                                </div>\
+                            </li>';
+                        $(li).appendTo($('#lightGallery'));
+                    }
+                console.log("length", jsonLength);
+                $('#lightGallery').lightGallery();
+            },
+            error: function (data) {
+
+            }
+        });
+    }
+
+    function getApiUrl() {
+        apiUrl = Cookies.get('apiUrl');
+        if (apiUrl == "" || apiUrl == null || apiUrl == "undefined") {
+            Cookies.set('apiUrl', 'raspberrypi.local/picam', {
+                expires: 30
+            });
+        } else {
+            Cookies.set('apiUrl', apiUrl, {
+                expires: 30
+            });
+        }
+        apiUrl = Cookies.get('apiUrl');
+        if (apiUrl.includes("http://")) {
+            fullPath = apiUrl;
+        } else {
+            fullPath = "http://" + apiUrl;
+        }
+        if (fullPath.slice(-1) != "/") {
+            fullPath = fullPath + "/";
+        }
+        console.log("Api url: " + apiUrl);
+        console.log("Full url: " + fullPath);
+    }
+
+    function get_zip_progress(zipname) {
+        var ajax_zip;
+        if (window.XMLHttpRequest) {
+            ajax_zip = new XMLHttpRequest();
+        } else {
+            ajax_zip = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        ajax_zip.onreadystatechange = function () {
+            if (ajax_zip.readyState == 4 && ajax_zip.status == 200) {
+                if (process_zip_progress(ajax_zip.responseText)) {
+                    setTimeout(function () {
+                        get_zip_progress(zipname);
+                    }, 1000);
+                } else {
+                    document.getElementById("zipdownload").value = zipname;
+                    document.getElementById("zipform").submit();
+                    document.getElementById("progress").style.display = "none";
+                }
+            }
+        }
+        ajax_zip.open("GET", "preview.php?zipprogress=" + zipname);
+        ajax_zip.send();
+    }
+
+    function process_zip_progress(str) {
+        var arr = str.split("/");
+        if (str.indexOf("Done") != -1) {
+            return false;
+        }
+        if (arr.length == 2) {
+            var count = parseInt(arr[0]);
+            var total = parseInt(arr[1]);
+            var progress = document.getElementById("progress");
+            var caption = " ";
+            if (count > 0) caption = str;
+            progress.innerHTML = caption + "<div style=\"width:" + (count / total) * 100 + "%;background-color:#0f0;\">&nbsp;</div>";
+
+        }
+        return true;
+    }
 </script>
 
 </html>
