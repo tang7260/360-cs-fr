@@ -152,37 +152,43 @@
                                     <div class="nav-tabs-wrapper">
                                         <ul class="nav nav-tabs">
                                             <li>
-                                                <a href="#">
+                                                <a href="#" id="analysis">
+                                                    <i class="material-icons">face</i> Analysis
+                                                    <div class="ripple-container"></div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" id="select">
                                                     <i class="material-icons">done_all</i> Select
                                                     <div class="ripple-container"></div>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="#" id="selectall">
                                                     <i class="material-icons">select_all</i> Select All
                                                     <div class="rip ple-container"></div>
                                                 </a>
                                             </li>
                                             <li class="">
-                                                <a href="#">
+                                                <a href="#" id="delete">
                                                     <i class="material-icons">delete</i> Delete Select
                                                     <div class="ripple-container"></div>
                                                 </a>
                                             </li>
                                             <li class="">
-                                                <a href="#">
+                                                <a href="#" id="deleteall">
                                                     <i class="material-icons">delete_forever</i> Delete All
                                                     <div class="ripple-container"></div>
                                                 </a>
                                             </li>
                                             <li class="">
-                                                <a href="#">
+                                                <a href="#" id="download">
                                                     <i class="material-icons">get_app</i> Download
                                                     <div class="ripple-container"></div>
                                                 </a>
                                             </li>
                                             <li class="">
-                                                <a href="#">
+                                                <a href="#" id="getZip">
                                                     <i class="material-icons">archive</i> Get Zip
                                                     <div class="ripple-container"></div>
                                                 </a>
@@ -199,31 +205,45 @@
                                 </video>
                             </div>
                         </div>
-                        
-                        <ul id="lightGallery">
+
+
+                        <ul id="lightGallery" class="lightGallery">
+
                             <li class="col-sm-4" data-src="media/003_result.jpg">
                                 <div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">
-                                    <img style="margin-left:0px;" class=" img-responsive " src="media/003_result.jpg" />
+                                    <img style="margin-left:0px;" class="img-responsive" src="media/003_result.jpg" />
                                     <div style="margin-left:15px">
                                         <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">003_result.jpg<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">photo</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 1.23 Mb</label><label style="color:#383838;font-weight:500;margin-left:5px;"> </label><br>
                                         <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 2017-1-16, 23:40:26</label>
                                         </h5>
+                                        <div class="g_btn" style="margin-top:-25px;margin-left:0px">
+                                            <button class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
+                                            <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>
+                                            <button class=" btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
+                                        </div>
                                     </div>
                                 </div>
+                                <br>
                             </li>
-                            
+
                             <li class="col-sm-4" data-poster="media/demo1.mp4_th.jpg" data-sub-html="360 demo video " data-html="#demo_video">
                                 <div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">
                                     <img style="margin-left:0px;" class="img-responsive " src="media/demo1.mp4_th.jpg" />
-
                                     <div style="margin-left:15px">
                                         <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">demo1.mp4<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">videocam</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 40.9 Mb</label><label style="color:#383838;font-weight:500;margin-left:5px;"></label><br>
                                         <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 2017-01-16, 23:18:17</label>
                                         </h5>
+                                        <div class="g_btn" style="margin-top:-25px;margin-left:0px;">
+                                            <button class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
+                                            <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>
+                                            <button class=" btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
+                                        </div>
                                     </div>
                                 </div>
+                                <br>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </div>
@@ -281,11 +301,45 @@
     var apiUrl = "";
     var path = "/picam/";
     var fullPath = "";
+    var $lg = $('#lightGallery');
+    var lgdisplay = false;
+    var lgOpen = false;
 
     $(document).ready(function () {
         getApiUrl();
+        $('#select').click(function () {
+            toggleLightGallery();
+            $('.g_btn').toggle("slow");
+        });
         get_media();
     });
+
+
+
+    function toggleLightGallery() {
+        if (lgdisplay) {
+            $lg.data('lightGallery').destroy(true);
+            lgdisplay = false;
+        } else {
+            $lg.lightGallery();
+            lgdisplay = true;
+        }
+    }
+
+    var ajax_file;
+
+    if (window.XMLHttpRequest) {
+        ajax_file = new XMLHttpRequest();
+    } else {
+        ajax_file = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    function deleteMedia(fileName) {
+        $.post(fullPath + "preview.php", {
+            delete1: fileName
+        });
+        location.reload();
+    }
 
     function get_media() {
         $.ajax({
@@ -293,32 +347,66 @@
             dataType: 'json',
             success: function (json) {
                 var jsonLength = json["filename"].length;
-                    for (var i in json["filename"]) {
-                        var type = json["filetype"][i] == "video" ? "videocam" : "photo" ;
-                        var liheader = '<li class="col-sm-4" data-src="'+ fullPath +'get_media.php?type='+ json["filetype"][i] + '&file=' + json["filename"][i] +'">';
-                        var videoDiv = '<div style="display:none;" id="video'+ i +'">\
+                for (var i in json["filename"]) {
+                    var type = json["filetype"][i] == "video" ? "videocam" : "photo";
+                    var liheader = '<li class="col-sm-4" data-src="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["filename"][i] + '">';
+                    var videoDiv = '<div style="display:none;" id="video' + i + '">\
                                 <video class="lg-video-object lg-html5" controls preload="none">\
-                                    <source src="'+ fullPath +'get_media.php?type='+ json["filetype"][i] + '&file=' + json["filename"][i] +'" type="video/mp4"> Your browser does not support HTML5 video.\
+                                    <source src="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["filename"][i] + '" type="video/mp4"> Your browser does not support HTML5 video.\
                                 </video>\
                             </div>';
-                        if(type=="videocam"){
-                            liheader = '<li class="col-sm-4" data-poster="'+ fullPath +'get_media.php?type='+ json["filetype"][i] + '&file='+ json["thimg"][i] +'" data-sub-html="'+ json["filename"][i] +'" data-html="#video'+ i +'">';
-                            $(videoDiv).appendTo($('#videoDiv'));
-                        }
-                        var li = liheader + 
-                                '<div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">\
-                                    <img style="margin-left:0px;" class=" img-responsive " src="'+ fullPath +'get_media.php?type='+ json["filetype"][i] + '&file='+ json["thimg"][i] +'" />\
-                                    <div style="margin-left:15px">\
-                                        <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">'+ json["filename"][i] +'<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">'+ type +'</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;">'+ json["filesize"][i] +'</label><label style="color:#383838;font-weight:500;margin-left:5px;"></label><br>\
-                                        <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;">'+ json["filetime"][i] +'</label>\
-                                        </h5>\
-                                    </div>\
-                                </div>\
-                            </li>';
-                        $(li).appendTo($('#lightGallery'));
+                    if (type == "videocam") {
+                        liheader = '<li class="col-sm-4" data-poster="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["thimg"][i] + '" data-sub-html="' + json["filename"][i] + '" data-html="#video' + i + '">';
+                        $(videoDiv).appendTo($('#videoDiv'));
                     }
+                    var li = liheader +
+                        '<div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">\
+                                    <img style="margin-left:0px;" class=" img-responsive " src="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["thimg"][i] + '" />\
+                                    <div style="margin-left:15px">\
+                                        <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">' + json["filename"][i] + '<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">' + type + '</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;">' + json["filesize"][i] + '</label><label style="color:#383838;font-weight:500;margin-left:5px;"></label><br>\
+                                        <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;">' + json["filetime"][i] + '</label>\
+                                        </h5>\
+                                        <div class="g_btn" style="margin-top:-25px;margin-left:0px;">\
+                                           <button class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>\
+                                            <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>\
+                                            <button class=" btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons" onclick="deleteMedia(\'' + json["thimg"][i] + '\')">delete</i></button>\
+                                        </div>\
+                                    </div>\
+                                 </div>\
+                              <br>\
+                            </li>';
+                    $(li).appendTo($('.lightGallery'));
+                }
                 console.log("length", jsonLength);
-                $('#lightGallery').lightGallery();
+                //toggleLightGallery();
+                $('img').hover(
+                        function () {
+                            toggleLightGallery();
+                        },
+                        function () {
+                            if (!lgOpen) {
+                                $lg.data('lightGallery').destroy(true);
+                                lgdisplay = false;
+                            }
+                        }
+                    );
+                    $('body').hover(
+                        function () {
+                            $lg.data('lightGallery').destroy(true);
+                            lgdisplay = false;
+                        },
+                        function () {}
+                    );
+                    $lg.on('onBeforeSlide.lg', function (event, index, fromTouch, fromThumb) {
+                        lgOpen = true;
+                        $lg.lightGallery();
+                        lgdisplay = true;
+                    });
+                    $lg.on('onCloseAfter.lg', function (event) {
+                        lgOpen = false;
+                        $lg.data('lightGallery').destroy(true);
+                        lgdisplay = false;
+                    });
             },
             error: function (data) {
 
