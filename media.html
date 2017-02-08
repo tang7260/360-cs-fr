@@ -219,7 +219,7 @@
                                         <div class="g_btn" style="margin-top:-25px;margin-left:0px">
                                             <button class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
                                             <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>
-                                            <button class=" btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
+                                            <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -234,9 +234,9 @@
                                         <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 2017-01-16, 23:18:17</label>
                                         </h5>
                                         <div class="g_btn" style="margin-top:-25px;margin-left:0px;">
-                                            <button class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
+                                            <button id="demo_result" class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
                                             <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>
-                                            <button class=" btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
+                                            <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -312,6 +312,9 @@
             $('.g_btn').toggle("slow");
         });
         get_media();
+        $('#demo_result').click(function(){
+            window.location.href = 'analysis.html';
+        })
     });
 
 
@@ -369,7 +372,7 @@
                                         <div class="g_btn" style="margin-top:-25px;margin-left:0px;">\
                                            <button class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>\
                                             <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>\
-                                            <button class=" btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons" onclick="deleteMedia(\'' + json["thimg"][i] + '\')">delete</i></button>\
+                                            <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons" onclick="deleteMedia(\'' + json["thimg"][i] + '\')">delete</i></button>\
                                         </div>\
                                     </div>\
                                  </div>\
