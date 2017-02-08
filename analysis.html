@@ -153,6 +153,7 @@
                                 <div class="card-content">
                                     <h4 class="title">Total Face Charts</h4>
 <!--                                    <p class="category"><span class="text-success"><i class="fa fa-long-arrow-up"></i> 55%  </span> increase in today sales.</p>-->
+                                   <button id="test" class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
@@ -230,9 +231,39 @@
 <script src="assets/js/demo.js"></script>
 <script src="assets/js/face.js"></script>
 <script>
+    var lab = ['1s','2s','3s']
+    var ser = [3,2,1]
+    
     $(document).ready(function () {
-        face.initFaceCharts();
+//        face.initFaceCharts();
+        face();
+        $('#test').click(function(){
+            lab.push('Xs');
+            ser.push(1);
+            face();
+        });
     });
+    
+    function face(){
+        dataDailySalesChart = {
+            labels: lab,
+            series: [
+                ser
+            ]
+        };
+
+        optionsDailySalesChart = {
+            lineSmooth: Chartist.Interpolation.cardinal({
+                tension: 0
+            }),
+            low: 0,
+            high: 5, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
+        }
+
+        var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
+        md.startAnimationForLineChart(dailySalesChart);
+    }
 </script>
 
 </html>
