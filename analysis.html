@@ -138,7 +138,7 @@
                                 <div class="card-footer">
                                     <div class="stats">
                                         <!--                                    <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>-->
-                                        <video class="pull-left" style="width:100%;" controls preload="none">
+                                        <video id='result_video' class="pull-left" style="width:100%;" controls preload="none">
                                             <source src="media/demo1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
                                         </video>
                                     </div>
@@ -234,36 +234,42 @@
     var lab = ['1s','2s','3s']
     var ser = [3,2,1]
     
+    var vid = document.getElementById("result_video");
+    
+    vid.ontimeupdate = function() {
+        console.log('times: ' + vid.currentTime);
+    };
+    
     $(document).ready(function () {
-//        face.initFaceCharts();
-        face();
-        $('#test').click(function(){
-            lab.push('Xs');
-            ser.push(1);
-            face();
-        });
+        face.initFaceCharts();
+//        face();
+//        $('#test').click(function(){
+//            lab.push('Xs');
+//            ser.push(1);
+//            face();
+//        });
     });
     
-    function face(){
-        dataDailySalesChart = {
-            labels: lab,
-            series: [
-                ser
-            ]
-        };
-
-        optionsDailySalesChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
-            low: 0,
-            high: 5, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
-        }
-
-        var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-        md.startAnimationForLineChart(dailySalesChart);
-    }
+//    function face(){
+//        dataDailySalesChart = {
+//            labels: lab,
+//            series: [
+//                ser
+//            ]
+//        };
+//
+//        optionsDailySalesChart = {
+//            lineSmooth: Chartist.Interpolation.cardinal({
+//                tension: 0
+//            }),
+//            low: 0,
+//            high: 5, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+//            chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
+//        }
+//
+//        var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
+//        md.startAnimationForLineChart(dailySalesChart);
+//    }
 </script>
 
 </html>
