@@ -209,7 +209,7 @@
 
                         <ul id="lightGallery" class="lightGallery">
 
-                            <li class="col-sm-4" data-src="media/003_result.jpg">
+                            <li class="col-lg-4 col-md-6 col-sm-12" data-src="media/003_result.jpg">
                                 <div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">
                                     <img style="margin-left:0px;" class="img-responsive" src="media/003_result.jpg" />
                                     <div style="margin-left:15px">
@@ -226,7 +226,7 @@
                                 <br>
                             </li>
 
-                            <li class="col-sm-4" data-poster="media/demo1.mp4_th.jpg" data-sub-html="360 demo video " data-html="#demo_video">
+                            <li class="col-lg-4 col-md-6 col-sm-12" data-poster="media/demo1.mp4_th.jpg" data-sub-html="360 demo video " data-html="#demo_video">
                                 <div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">
                                     <img style="margin-left:0px;" class="img-responsive " src="media/demo1.mp4_th.jpg" />
                                     <div style="margin-left:15px">
@@ -352,14 +352,14 @@
                 var jsonLength = json["filename"].length;
                 for (var i in json["filename"]) {
                     var type = json["filetype"][i] == "video" ? "videocam" : "photo";
-                    var liheader = '<li class="col-sm-4" data-src="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["filename"][i] + '">';
+                    var liheader = '<li class="col-lg-4 col-md-6 col-sm-12" data-src="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["filename"][i] + '">';
                     var videoDiv = '<div style="display:none;" id="video' + i + '">\
                                 <video class="lg-video-object lg-html5" controls preload="none">\
                                     <source src="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["filename"][i] + '" type="video/mp4"> Your browser does not support HTML5 video.\
                                 </video>\
                             </div>';
                     if (type == "videocam") {
-                        liheader = '<li class="col-sm-4" data-poster="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["thimg"][i] + '" data-sub-html="' + json["filename"][i] + '" data-html="#video' + i + '">';
+                        liheader = '<li class="col-lg-4 col-md-6 col-sm-12" data-poster="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["thimg"][i] + '" data-sub-html="' + json["filename"][i] + '" data-html="#video' + i + '">';
                         $(videoDiv).appendTo($('#videoDiv'));
                     }
                     var li = liheader +
@@ -393,16 +393,8 @@
                             }
                         }
                     );
-                    $('body').hover(
-                        function () {
-                            $lg.data('lightGallery').destroy(true);
-                            lgdisplay = false;
-                        },
-                        function () {}
-                    );
-                    $lg.on('onBeforeSlide.lg', function (event, index, fromTouch, fromThumb) {
+                    $lg.on('onBeforeOpen.lg', function (event, index, fromTouch, fromThumb) {
                         lgOpen = true;
-                        $lg.lightGallery();
                         lgdisplay = true;
                     });
                     $lg.on('onCloseAfter.lg', function (event) {
