@@ -15,11 +15,10 @@ if (isset($_GET["type"]) && isset($_GET["filename"])){
     }else if ($type == 'video'){
         if(isset($_GET["video_position"])){
             $video_position = $_GET["video_position"];
-            $jsonarray[] = $db->get_video_lpos($name,$video_position);
+            $jsonarray = $db->get_video_lpos($name,$video_position);
             
         }else{
-            $jsonarray['faceimg'] = $db->get_video($name);
-            $jsonarray['charts'] = $db->get_video_charts($name);
+            $jsonarray = $db->get_charts_faceimg($name);
         }
     }
 }

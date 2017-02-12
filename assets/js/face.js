@@ -43,5 +43,25 @@ face = {
 
         var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
 
+    },
+    initFaceDiv: function(arr,lab){
+        enddiv = '<div class="card-footer"></div>';
+        $('#face').html('');
+        $.each(arr, function (i, v) {
+            divid = 'faceimg' + i ;
+            faceImgEle = '<div class="card-footer">\
+                        <div class="stats">\
+                            <i class="material-icons">access_time</i> ' + lab[i] + '<br>' +
+                            '<div id="' + divid + '">\
+                            </div>\
+                        </div>\
+                    </div>';
+            $('#face').prepend(faceImgEle).fadeIn(300);
+            $.each(arr[i],function(j, x){
+                 imgdiv = '<div style="width:15%;"><img class="img-responsive img-raised" src="'+ x['file_path'] + x['img_name'] +'" /></div>\n'
+                 $('#'+divid).prepend(imgdiv).fadeIn(999);;
+            });
+        });
+        $('#face').append(enddiv);
     }
 }

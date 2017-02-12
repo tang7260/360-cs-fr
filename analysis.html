@@ -18,6 +18,7 @@
 
     <!--  Material Dashboard CSS    -->
     <link href="assets/css/material-dashboard.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
 
     <link href="assets/css/loading.css" rel="stylesheet" />
     <!--     Fonts and icons     -->
@@ -28,18 +29,33 @@
 
     <style>
         .playpause {
-            background-image: url(assets/img/play_pause_resume.png);
+            background-image: url(assets/img/play_button.png);
             background-repeat: no-repeat;
             width: 50%;
             height: 50%;
             position: absolute;
             left: 0%;
             right: 0%;
-            top: 20%;
+            top: 15%;
             bottom: 0%;
             margin: auto;
             background-size: contain;
             background-position: center;
+        }
+    
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background-color: #cfd3df;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #7e7e7e;
         }
     </style>
 </head>
@@ -145,18 +161,18 @@
                     <div style="margin:1.8%">
                         <h3 style="margin-top:60px">Face Recognition Result - demo7.mp4</h3>
                         <div class="row" style="margin-top:0%">
-                            <div class="col-lg-8 col-md-8 col-sm-12">
+                            <div class="col-lg-8 col-md-8 col-sm-12 wow fadeIn">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="orange">
                                         <i class="material-icons">compare</i>
                                     </div>
-                                    <div class="card-content">
+                                    <div class="card-content wow fadeIn">
                                         <!--                                <p class="category">Image</p>-->
                                         <h3 class="title">demo7.mp4 <small>40.9 Mb</small></h3>
                                         <h4 class="title">2017-01-16, 23:18:17</h4>
                                     </div>
 
-                                    <div class="card-footer">
+                                    <div class="card-footer wow fadeInDown">
                                         <div class="stats">
                                             <!--                                    <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>-->
                                             <video id='result_video' class="pull-left" style="width:100%;height:auto;" controls preload="none" poster="media/003_result.jpg" onclick="playPause()">
@@ -167,145 +183,33 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="col-lg-4 col-md-4 col-sm-12" style="max-height:60vh;">
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInDown">
                                 <div class="card card-stats">
                                     <div class="card-header" data-background-color="red">
                                         <i class="material-icons">face</i>
                                     </div>
-                                    <div class="card-content">
+                                    <div class="card-content wow fadeInDown">
                                         <!--                                <p class="category">Image</p>-->
                                         <h3 class="title">The face in the video </h3>
                                         <h4 class="title"><small> per second</small></h4>
                                     </div>
 
-                                    <div id="face"  style="overflow-y: auto;">
-                                        <div class="card-footer">
-                                            <div class="stats">
-                                                <div class="stats">
-                                                    <i class="material-icons">access_time </i>
-                                                    <div id='face_seconds'></div>
-                                                    <br>
-                                                    <div id='face-img'>
-                                                        <div style="width:15%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f1.jpg" /></div>
-                                                        <div style="width:15%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f2.jpg" /></div>
-                                                        <div style="width:15%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f3.jpg" /></div>
-                                                        <div style="width:15%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f4.jpg" /></div>
-                                                        <div style="width:15%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f5.jpg" /></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="card-footer">
-                                            <div class="stats">
-                                                <div class="stats">
-                                                    <i class="material-icons">access_time </i>
-                                                    <div id='face_seconds'></div>
-                                                    <br>
-                                                    <div id='face-img'>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f1.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f2.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f3.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f4.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f5.jpg" /></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="card-footer">
-                                            <div class="stats">
-                                                <div class="stats">
-                                                    <i class="material-icons">access_time </i>
-                                                    <div id='face_seconds'></div>
-                                                    <br>
-                                                    <div id='face-img'>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f1.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f2.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f3.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f4.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f5.jpg" /></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="card-footer">
-                                            <div class="stats">
-                                                <div class="stats">
-                                                    <i class="material-icons">access_time </i>
-                                                    <div id='face_seconds'></div>
-                                                    <br>
-                                                    <div id='face-img'>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f1.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f2.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f3.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f4.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f5.jpg" /></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="card-footer">
-                                            <div class="stats">
-                                                <div class="stats">
-                                                    <i class="material-icons">access_time </i>
-                                                    <div id='face_seconds'></div>
-                                                    <br>
-                                                    <div id='face-img'>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f1.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f2.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f3.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f4.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f5.jpg" /></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="card-footer">
-                                            <div class="stats">
-                                                <div class="stats">
-                                                    <i class="material-icons">access_time </i>
-                                                    <div id='face_seconds'></div>
-                                                    <br>
-                                                    <div id='face-img'>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f1.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f2.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f3.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f4.jpg" /></div>
-                                                        <div style="width:19%"><img class="img-responsive " src="media/result/faces/demo7_0059_1s_f5.jpg" /></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                        
-                                        <div class="card-footer">
-                                            <div class="stats">
-                                                <div class="stats">
-
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div id="face" class="wow fadeInDown" style="max-height:62vh;overflow-y: auto;">
                                     </div>
-
                                 </div>
                             </div>
-                            
-                            <div class="col-lg-8 col-md-8 col-sm-12">
+
+                            <div class="col-lg-8 col-md-8 col-sm-12 wow fadeInDown">
                                 <div class="card">
-                                    <div class="card-header card-chart" data-background-color="blue">
+                                    <div class="card-header card-chart wow fadeInDown" data-background-color="blue">
                                         <div class="ct-chart" id="dailySalesChart"></div>
                                     </div>
-                                    <div class="card-content">
+                                    <div class="card-content wow fadeInDown">
                                         <h4 class="title">Total face analysis charts <small> per second</small></h4>
                                         <p class="category"><span class="text-success"><i class="fa fa-long-arrow-up"></i> 5  </span> faces per second is the average recognition rate for this video </p>
                                     </div>
-                                    <div class="card-footer">
+                                    <div class="card-footer wow fadeInDown">
                                         <div class="stats">
                                             <i class="material-icons">access_time</i> Video duration 20s
                                         </div>
@@ -313,9 +217,9 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInDown">
                                 <div class="card card-stats">
-                                    <div class="card-header" data-background-color="orange">
+                                    <div class="card-header wow fadeInDown" data-background-color="orange">
                                         <i class="material-icons">face</i>
                                     </div>
                                     <div class="card-content">
@@ -335,14 +239,14 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            
+
+
                         </div>
-                        
+
                         <div class="row"></div>
 
                         <div class="row">
-                            
+
                         </div>
                     </div>
 
@@ -401,6 +305,7 @@
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="assets/js/material.min.js" type="text/javascript"></script>
 <script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
 
 <!--  Charts Plugin -->
 <script src="assets/js/chartist.min.js"></script>
@@ -418,12 +323,8 @@
     var pos = [];
     var times;
     var max;
+    var faceImg = [];
     var vid = document.getElementById("result_video");
-    var faceImgEle = '<div class="card-footer">\
-                        <div class="stats">\
-                            <i class="material-icons">access_time</i>\
-                        </div>\
-                    </div>';
 
     function playPause() {
         if (vid.paused)
@@ -432,22 +333,23 @@
             vid.pause();
     }
 
-    function getCharts() {
+    function getResult() {
         $.getJSON("get_result.php?type=video&filename=demo7.mp4", function (result) {
             max = 0;
-            $.each(result['charts'], function (i, v) {
+            $.each(result, function (i, v) {
                 lab.push(v['video_position_str']);
                 ser.push(v['total_face']);
                 pos.push(parseInt(v['total_face']));
+                faceImg.push(v['faceimg']);
                 if (parseInt(v['total_face']) > max) {
                     max = parseInt(v['total_face']);
                 }
             });
+            console.log('result', faceImg);
             max += 2;
-            console.log('max', max);
             face.initFaceCharts(lab, ser, max);
+            face.initFaceDiv(faceImg,lab);
         });
-
     }
 
     function indexFilter(element, index, array) {
@@ -472,8 +374,8 @@
 
 
     $(document).ready(function () {
-        getCharts();
-
+        new WOW().init();
+        getResult();
         vid.ontimeupdate = function () {
             times = parseInt(vid.currentTime);
             //postime = pos.filter(indexFilter);
@@ -481,9 +383,10 @@
             //sertime = ser.filter(indexFilter);
             labtime = timeFilter(lab, times);
             sertime = timeFilter(ser, times);
+            faceImgt = faceImg.filter(indexFilter);
+            facelab = lab.filter(indexFilter);
             face.updateCharts(labtime, sertime, max);
-            $('#face_seconds').html(times + 's');
-            console.log('times: ' + times);
+            face.initFaceDiv(faceImgt,facelab);
         };
 
         vid.onplaying = function () {
@@ -493,9 +396,7 @@
         vid.onpause = function () {
             $(".playpause").fadeIn();
         }
-
-
+       
     });
 </script>
-
 </html>
