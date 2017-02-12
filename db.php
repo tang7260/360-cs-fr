@@ -107,7 +107,7 @@ class db{
         return $jsonarray;
     }
     
-        function get_charts_faceimg($name){
+    function get_charts_faceimg($name){
         $jsonarray = array();
         $sql = "SELECT `video_name`,`video_position`, MAX(`pos_face_no`) AS total_face FROM videoface WHERE `video_name` = '$name' GROUP BY `video_position`;";
         $result = mysqli_query($this->conn, $sql) 
@@ -129,6 +129,40 @@ class db{
             $row['faceimg'] = $this->get_video_face_pos($name,$position);
             $jsonarray[] = $row;
         }
+        return $jsonarray;
+    }
+    
+    function get_camrea($id){
+        $jsonarray = array();
+        $sql = "SELECT * FROM `camrea` WHERE `id` = '$id';";
+        $result = mysqli_query($this->conn, $sql) 
+            or die("Error in Selecting " . mysqli_error($this->conn));
+
+        while($row =mysqli_fetch_assoc($result)){
+            $jsonarray[] = $row;
+        }
+        return $jsonarray;
+    }
+    
+    function get_video_info($name){
+        $jsonarray = array();
+        $sql = "SELECT * FROM `video` WHERE `fileName` = '$name';";
+        $result = mysqli_query($this->conn, $sql) 
+            or die("Error in Selecting " . mysqli_error($this->conn));
+
+        while($row =mysqli_fetch_assoc($result)){
+            $camrea = $this->get_camrea($row['recordBy']);
+            $row['recordBy'] = $camrea[0]['model'];
+            $jsonarray[] = $row;
+        }
+        return $jsonarray;
+    }
+    
+    function get_video_result($name){
+        $jsonarray = array();
+        $jsonarray['result_data'] = $this->get_charts_faceimg($name);
+        $jsonarray['file_info'] = $this->get_video_info($name);
+        
         return $jsonarray;
     }
 }

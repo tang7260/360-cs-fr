@@ -51,7 +51,7 @@ face = {
             divid = 'faceimg' + i ;
             faceImgEle = '<div class="card-footer">\
                         <div class="stats">\
-                            <i class="material-icons">access_time</i> ' + lab[i] + '<br>' +
+                            <span class="ctimes"><i class="material-icons">access_time</i> ' + lab[i] + '</span><br>' +
                             '<div id="' + divid + '">\
                             </div>\
                         </div>\

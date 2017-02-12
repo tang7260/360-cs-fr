@@ -16,6 +16,8 @@
     <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
+    <link href="assets/css/animate.css" rel="stylesheet" />
+
     <!--  Material Dashboard CSS    -->
     <link href="assets/css/material-dashboard.css" rel="stylesheet" />
 
@@ -44,6 +46,20 @@
             background: #333;
             background-image: linear-gradient(to right, #cccccc, #aaaaaa, #cccccc);
         }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background-color: #cfd3df;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #7e7e7e;
+        }
     </style>
 </head>
 
@@ -57,13 +73,13 @@
 		        Tip 2: you can also add an image using data-image tag
 		    -->
 
-            <div class="logo">
+            <div class="logo wow fadeIn">
                 <a href="index.html" class="simple-text">
 					360
 				</a>
             </div>
 
-            <div class="sidebar-wrapper">
+            <div class="sidebar-wrapper wow fadeIn">
                 <ul class="nav">
                     <li>
                         <a href="index.html">
@@ -147,10 +163,10 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="card card-nav-tabs card-plain">
-                            <div class="card-header" data-background-color="">
+                            <div class="card-header wow fadeInDown" data-background-color="">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
-                                        <ul class="nav nav-tabs">
+                                        <ul class="nav nav-tabs wow fadeInDown">
                                             <li>
                                                 <a href="#" id="analysis">
                                                     <i class="material-icons">face</i> Analysis
@@ -206,44 +222,44 @@
                             </div>
                         </div>
 
+                        <div class="wow fadeInUp">
+                            <ul id="lightGallery" class="lightGallery">
 
-                        <ul id="lightGallery" class="lightGallery">
-
-                            <li class="col-lg-4 col-md-6 col-sm-12" data-src="media/003_result.jpg">
-                                <div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">
-                                    <img style="margin-left:0px;" class="img-responsive" src="media/003_result.jpg" />
-                                    <div style="margin-left:15px">
-                                        <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">003_result.jpg<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">photo</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 1.23 Mb</label><label style="color:#383838;font-weight:500;margin-left:5px;"> </label><br>
+                                <li class="col-lg-4 col-md-6 col-sm-12" data-src="media/003_result.jpg">
+                                    <div class="div-card card-2 " style="margin-left:-15px; width:99%; background:#f8f8f8;">
+                                        <img style="margin-left:0px;" class="img-responsive" src="media/003_result.jpg" />
+                                        <div style="margin-left:15px">
+                                            <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">003_result.jpg<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">photo</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 1.23 Mb</label><label style="color:#383838;font-weight:500;margin-left:5px;"> </label><br>
                                         <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 2017-1-16, 23:40:26</label>
                                         </h5>
-                                        <div class="g_btn" style="margin-top:-25px;margin-left:0px">
-                                            <button class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
-                                            <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>
-                                            <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
+                                            <div class="g_btn" style="margin-top:-25px;margin-left:0px">
+                                                <button class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
+                                                <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>
+                                                <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                            </li>
+                                    <br>
+                                </li>
 
-                            <li class="col-lg-4 col-md-6 col-sm-12" data-poster="media/demo1.mp4_th.jpg" data-sub-html="360 demo video " data-html="#demo_video">
-                                <div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">
-                                    <img style="margin-left:0px;" class="img-responsive " src="media/demo1.mp4_th.jpg" />
-                                    <div style="margin-left:15px">
-                                        <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">demo1.mp4<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">videocam</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 40.9 Mb</label><label style="color:#383838;font-weight:500;margin-left:5px;"></label><br>
+                                <li class="col-lg-4 col-md-6 col-sm-12" data-poster="media/demo1.mp4_th.jpg" data-sub-html="360 demo video " data-html="#demo_video">
+                                    <div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">
+                                        <img style="margin-left:0px;" class="img-responsive " src="media/demo1.mp4_th.jpg" />
+                                        <div style="margin-left:15px">
+                                            <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">demo1.mp4<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">videocam</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 40.9 Mb</label><label style="color:#383838;font-weight:500;margin-left:5px;"></label><br>
                                         <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;"> 2017-01-16, 23:18:17</label>
                                         </h5>
-                                        <div class="g_btn" style="margin-top:-25px;margin-left:0px;">
-                                            <button id="demo_result" class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
-                                            <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>
-                                            <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
+                                            <div class="g_btn" style="margin-top:-25px;margin-left:0px;">
+                                                <button id="demo_result" class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>
+                                                <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>
+                                                <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons">delete</i></button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                            </li>
-                        </ul>
-
+                                    <br>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -269,6 +285,25 @@
             </footer>
         </div>
     </div>
+    
+    <!-- Modal Core -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Confirm delete file</h4>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger btn-simple" id="confirm_delete">DELETE</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
@@ -277,6 +312,8 @@
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="assets/js/material.min.js" type="text/javascript"></script>
 <script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+
 
 <!--  Charts Plugin -->
 <script src="assets/js/chartist.min.js"></script>
@@ -286,6 +323,7 @@
 
 <!-- Material Dashboard javascript methods -->
 <script src="assets/js/material-dashboard.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
 <script src="assets/js/lightgallery.min.js"></script>
@@ -306,18 +344,17 @@
     var lgOpen = false;
 
     $(document).ready(function () {
+        new WOW().init();
         getApiUrl();
         $('#select').click(function () {
             toggleLightGallery();
             $('.g_btn').toggle("slow");
         });
         get_media();
-        $('#demo_result').click(function(){
+        $('#demo_result').click(function () {
             window.location.href = 'analysis.html';
         })
     });
-
-
 
     function toggleLightGallery() {
         if (lgdisplay) {
@@ -337,11 +374,15 @@
         ajax_file = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
-    function deleteMedia(fileName) {
-        $.post(fullPath + "preview.php", {
-            delete1: fileName
+    function deleteMedia(fileName, displayname) {
+        $(".modal-body").html('Are you sure you want to delete '+ displayname +' ?');
+        $("#confirm_delete").click(function(){
+            $.post(fullPath + "preview.php", {
+                delete1: fileName
+            });
+            location.reload();
         });
-        location.reload();
+        $("#myModal").modal()      
     }
 
     function get_media() {
@@ -372,36 +413,37 @@
                                         <div class="g_btn" style="margin-top:-25px;margin-left:0px;">\
                                            <button class="btn btn-info btn-sm"><i class="material-icons">face</i> analysis</button>\
                                             <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>\
-                                            <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round"><i class="material-icons" onclick="deleteMedia(\'' + json["thimg"][i] + '\')">delete</i></button>\
+                                            <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round" onclick="deleteMedia(\'' + json["thimg"][i] + '\',\'' + json["filename"][i] + '\')"><i class="material-icons">delete</i></button>\
                                         </div>\
                                     </div>\
                                  </div>\
                               <br>\
                             </li>';
-                    $(li).appendTo($('.lightGallery'));
+                    //                    $(li).appendTo($('.lightGallery'));
+                    $lg.append(li);
                 }
                 console.log("length", jsonLength);
                 //toggleLightGallery();
                 $('img').hover(
-                        function () {
-                            toggleLightGallery();
-                        },
-                        function () {
-                            if (!lgOpen) {
-                                $lg.data('lightGallery').destroy(true);
-                                lgdisplay = false;
-                            }
+                    function () {
+                        toggleLightGallery();
+                    },
+                    function () {
+                        if (!lgOpen) {
+                            $lg.data('lightGallery').destroy(true);
+                            lgdisplay = false;
                         }
-                    );
-                    $lg.on('onBeforeOpen.lg', function (event, index, fromTouch, fromThumb) {
-                        lgOpen = true;
-                        lgdisplay = true;
-                    });
-                    $lg.on('onCloseAfter.lg', function (event) {
-                        lgOpen = false;
-                        $lg.data('lightGallery').destroy(true);
-                        lgdisplay = false;
-                    });
+                    }
+                );
+                $lg.on('onBeforeOpen.lg', function (event, index, fromTouch, fromThumb) {
+                    lgOpen = true;
+                    lgdisplay = true;
+                });
+                $lg.on('onCloseAfter.lg', function (event) {
+                    lgOpen = false;
+                    $lg.data('lightGallery').destroy(true);
+                    lgdisplay = false;
+                });
             },
             error: function (data) {
 

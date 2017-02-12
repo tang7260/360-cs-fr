@@ -18,7 +18,7 @@ if (isset($_GET["type"]) && isset($_GET["filename"])){
             $jsonarray = $db->get_video_lpos($name,$video_position);
             
         }else{
-            $jsonarray = $db->get_charts_faceimg($name);
+            $jsonarray = $db->get_video_result($name);
         }
     }
 }
