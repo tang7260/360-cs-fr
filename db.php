@@ -21,6 +21,42 @@ class db{
         $this->conn->close();
     }
     
+    function get_image_info($name){
+        $jsonarray = array();
+        $sql = "SELECT * FROM photo WHERE fileName = '$name';";
+        $result = mysqli_query($this->conn, $sql) 
+            or die("Error in Selecting " . mysqli_error($this->conn));
+
+        while($row =mysqli_fetch_assoc($result)){
+            $jsonarray[] = $row;
+        }
+        return $jsonarray;
+    }
+    
+    function get_image_face($name) {
+        $jsonarray = array();
+        if($video_position==0){
+            $video_position=1;
+        }
+        $sql = "SELECT * FROM photoface WHERE photo_name = '$name';";
+        $result = mysqli_query($this->conn, $sql) 
+            or die("Error in Selecting " . mysqli_error($this->conn));
+
+        while($row =mysqli_fetch_assoc($result)){
+            $jsonarray[] = $row;
+        }
+        return $jsonarray;
+    }
+    
+    function get_image_result($name){
+        $jsonarray = array();
+        $jsonarray['result_data'] = $this->get_image_face($name);
+        $jsonarray['file_info'] = $this->get_image_info($name);
+        
+        return $jsonarray;
+    }
+    
+    
     function get_video_lpos($name,$video_position) {
         $jsonarray = array();
         if($video_position==0){
@@ -75,11 +111,6 @@ class db{
         while($row =mysqli_fetch_assoc($result)){
             $jsonarray[] = $row;
         }
-        return $jsonarray;
-    }
-
-    function get_image(){
-        $jsonarray = array();
         return $jsonarray;
     }
     

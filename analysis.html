@@ -42,7 +42,6 @@
             background-size: contain;
             background-position: center;
         }
-    
         
         ::-webkit-scrollbar {
             width: 8px;
@@ -58,21 +57,21 @@
             background-color: #7e7e7e;
         }
         
-        .info{
+        .info {
             font-size: 17.5px;
             font-weight: 500;
             text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.30);
             color: #2c2c2c;
         }
         
-        .info_head{
+        .info_head {
             font-size: 16px;
             font-weight: 500;
             text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.30);
             color: #717070;
         }
         
-        .ctimes{
+        .ctimes {
             font-size: 15px;
             font-weight: 400;
             text-shadow: 0px 0px 11px rgba(150, 150, 150, 1);
@@ -82,6 +81,14 @@
 </head>
 
 <body>
+    <div id='loading' style="width:50%;margin:25%">
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+
+            </div>
+        </div>
+        <h2 id="loading_text" style="margin-left:20vw;">Analyzing ...</h2>
+    </div>
     <div class="wrapper">
         <div class="sidebar" data-color="red" data-image="assets/img/sidebar-1.jpg" style="display:none;">
 
@@ -196,7 +203,7 @@
                                     <div class="card-footer wow fadeInDown">
                                         <div class="stats wow fadeInDown">
                                             <!--                                    <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>-->
-                                            <video id='result_video' class="pull-left wow fadeInDown" style="width:100%;height:auto;" controls preload="none" poster="media/003_result.jpg" onclick="playPause()">
+                                            <video id='result_video' class="pull-left wow fadeInDown" style="width:100%;height:auto;" controls preload="none" poster="media/result/demo7_result.mp4_th.jpg" onclick="playPause()">
                                                 <source src="media/result/demo7_result.mp4" type="video/mp4"> Your browser does not support HTML5 video.
                                             </video>
                                             <div class="playpause" onclick="playPause()" style="display:none;"></div>
@@ -245,21 +252,22 @@
                                     </div>
                                     <div class="card-content wow fadeInDown">
                                         <!--                                <p class="category">Image</p>-->
-                                        <h3 class="title">Information</h3><br>
-                                        
+                                        <h3 class="title">Information</h3>
+                                        <br>
+
                                     </div>
                                     <div class="card-footer wow fadeInDown">
                                         <div class="stats">
                                             <!--                                    <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>-->
-                                        <h4 class="title info_head">Filename: <span class='filename info'></span></h4>
-                                        <h4 class="title info_head">Record Datetime: <span class='datetime info'></span></h4>
-                                        <h4 class="title info_head">File size: <span class='size info'></span></h4>
-                                        <h4 class="title info_head">Average faces: <span class='avgface info'></span></h4>
-                                        <h4 class="title info_head">Video Duration: <span class='length info'></span></h4>
-                                        <h4 class="title info_head">Record by: <span class='recordby info'></span></h4>
-                                        <h4 class="title info_head">FPS: <span class='fps info'></span></h4>
-                                        <h4 class="title info_head">Width: <span class='width info'></span></h4>
-                                        <h4 class="title info_head">Height: <span class='height info'></span></h4>
+                                            <h4 class="title info_head">Filename: <span class='filename info'></span></h4>
+                                            <h4 class="title info_head">Record Datetime: <span class='datetime info'></span></h4>
+                                            <h4 class="title info_head">File size: <span class='size info'></span></h4>
+                                            <h4 class="title info_head">Average faces: <span class='avgface info'></span></h4>
+                                            <h4 class="title info_head">Video Duration: <span class='length info'></span></h4>
+                                            <h4 class="title info_head">Record by: <span class='recordby info'></span></h4>
+                                            <h4 class="title info_head">FPS: <span class='fps info'></span></h4>
+                                            <h4 class="title info_head">Width: <span class='width info'></span></h4>
+                                            <h4 class="title info_head">Height: <span class='height info'></span></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -375,21 +383,25 @@
             });
             $.each(result["file_info"], function (i, v) {
                 avg = parseInt(sum / result['result_data'].length);
-            $('.filename').html(v["fileName"]);
-            $('.datetime').html(v["recordDate"]);
-            $('.size').html(v["fileSize"]);
-            $('.length').html(v["duration"]+'s');
-            $('.recordby').html(v["recordBy"]);
-            $('.fps').html(v["fps"]);
-            $('.width').html(v["width"]);
-            $('.height').html(v["height"]);
-            $('.avgface').html(avg);
+                $('.filename').html(v["fileName"]);
+                $('.datetime').html(v["recordDate"]);
+                $('.size').html(v["fileSize"]);
+                $('.length').html(v["duration"] + 's');
+                $('.recordby').html(v["recordBy"]);
+                $('.fps').html(v["fps"]);
+                $('.width').html(v["width"]);
+                $('.height').html(v["height"]);
+                $('.avgface').html(avg);
             });
-            
             max += 2;
             face.initFaceCharts(lab, ser, max);
-            face.initFaceDiv(faceImg,lab);
+            face.initFaceDiv(faceImg, lab);
+
+            $('#loading').fadeOut(600);
+            $('.wrapper').show();
+
         });
+
     }
 
     function indexFilter(element, index, array) {
@@ -412,10 +424,18 @@
         return filter;
     }
 
-
     $(document).ready(function () {
         new WOW().init();
-        getResult();
+        $('.wrapper').hide();
+        $('#loading_text').html('Upload file to servers');
+        setTimeout(function () {
+            $('#loading_text').html('Analyzing ...');
+        }, 5000);
+        setTimeout(function () {
+            $('#loading_text').html('Complete');
+            getResult();
+        }, 16000);
+
         vid.ontimeupdate = function () {
             times = parseInt(vid.currentTime);
             //postime = pos.filter(indexFilter);
@@ -426,7 +446,7 @@
             faceImgt = faceImg.filter(indexFilter);
             facelab = lab.filter(indexFilter);
             face.updateCharts(labtime, sertime, max);
-            face.initFaceDiv(faceImgt,facelab);
+            face.initFaceDiv(faceImgt, facelab);
         };
 
         vid.onplaying = function () {
@@ -436,7 +456,8 @@
         vid.onpause = function () {
             $(".playpause").fadeIn();
         }
-       
+
     });
 </script>
+
 </html>

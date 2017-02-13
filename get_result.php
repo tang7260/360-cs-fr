@@ -11,7 +11,7 @@ if (isset($_GET["type"]) && isset($_GET["filename"])){
     $name = $_GET["filename"];
     $type = $_GET["type"];
     if($type == 'image'){
-        $jsonarray = $db->get_image();
+        $jsonarray = $db->get_image_result($name);
     }else if ($type == 'video'){
         if(isset($_GET["video_position"])){
             $video_position = $_GET["video_position"];
@@ -21,9 +21,8 @@ if (isset($_GET["type"]) && isset($_GET["filename"])){
             $jsonarray = $db->get_video_result($name);
         }
     }
+    $db->close();
 }
 
 echo json_encode($jsonarray);
-
-$db->close();
 ?>
