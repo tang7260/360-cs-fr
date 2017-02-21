@@ -196,5 +196,10 @@ class db{
         
         return $jsonarray;
     }
+    
+    function insert_photo($fileName, $recordDate, $fileSize, $width, $height){
+        mysqli_query($this->conn,"INSERT INTO photo (recordBy, fileName, recordDate, fileSize, fileFormat, width, height) 
+        VALUES ('1', '$fileName', '$recordDate', '$fileSize', 'jpg', '$width', '$height')");
+    }
 }
 ?>
