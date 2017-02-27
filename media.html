@@ -26,7 +26,7 @@
     <link href="assets/css/card.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
 
     <link type="text/css" rel="stylesheet" href="assets/css/lightGallery.css" />
@@ -421,20 +421,20 @@
                         '<div class="div-card card-2" style="margin-left:-15px; width:99%; background:#f8f8f8;">\
                                     <img style="margin-left:0px;" class=" img-responsive " src="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["thimg"][i] + '" />\
                                     <div style="margin-left:15px">\
-                                        <form method="post" id="ana'+ i +'"\ action="analysis.php">\
                                         <h5 style="font-weight:600;word-wrap: break-word;font-size:15px;">' + json["filename"][i] + '<label class="pull-right" style="color:#383838;margin-right:10px;"><i class="material-icons" style="font-size:20px;">' + type + '</i></label><br><i class="material-icons" style="font-size:20px;">info_outline</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;">' + json["filesize"][i] + '</label><label style="color:#383838;font-weight:500;margin-left:5px;"></label><br>\
                                         <i class="material-icons" style="font-size:20px;">access_time</i><label style="color:#383838;font-weight:500;margin-top:-20px;margin-left:10px;">' + json["filetime"][i] + '</label>\
                                         </h5>\
                                         <div class="g_btn" style="margin-top:-25px;margin-left:0px;">\
-                                           <button class="btn btn-info btn-sm"><i class="material-icons" >face</i> analysis</button>\
+                                            <form method="post" id="ana'+ i +'"\ action="analysis.php">\
+                                            <button class="btn btn-info btn-sm"><i class="material-icons" >face</i> analysis</button>\
                                             <button style="display:none;" class="btn btn-success btn-sm"><i class="material-icons">done</i> Select</button>\
-                                            <button style="margin-top:0px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round" onclick="deleteMedia(\'' + json["thimg"][i] + '\',\'' + json["filename"][i] + '\')"><i class="material-icons">delete</i></button>\
                                             <input type="hidden" name="filename" value="' + json["filename"][i] + '">\
                                             <input type="hidden" name="datetime" value="' + json["filetime"][i] + '">\
                                             <input type="hidden" name="filesize" value="' + json["filesize"][i] + '">\
                                             <input type="hidden" name="width" value="' + width + '">\
                                             <input type="hidden" name="height" value="' + height + '">\
                                             </form>\
+                                            <button style="margin-top:-50px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round" onclick="deleteMedia(\'' + json["thimg"][i] + '\',\'' + json["filename"][i] + '\')"><i class="material-icons">delete</i></button>\
                                         </div>\
                                     </div>\
                                  </div>\

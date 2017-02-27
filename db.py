@@ -37,9 +37,9 @@ class Database:
         print ("Insert OK")
 
 
-# db1 = Database("localhost", "root", "", "360db")
+db1 = Database("localhost", "root", "", "360db")
 #
-# db1.db_version()
+db1.db_version()
 #
 # data = (1, 'demo1.mp4_1_001', '/result/face', 1, None, 150, 150, 300, 300, 125, 200)
 #
