@@ -139,7 +139,7 @@
                                                     <div class="ripple-container"></div>
                                                 </a>
                                             </li>
-                                            <li class="">
+                                            <li class="" id="face_btn">
                                                 <a href="#messages" data-toggle="tab">
                                                     <i class="material-icons">face</i> Face
                                                     <div class="ripple-container"></div>
@@ -188,9 +188,23 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="messages">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                            Launch demo modal
-                                        </button>
+                                        <div class="row">
+<!--
+                                            <div id="loader" class="loader"></div>
+                                            <div id="error" class="alert alert-danger col-sm-10 col-sm-offset-1">
+                                                <div class="container-fluid">
+                                                    <div class="alert-icon">
+                                                        <i class="material-icons">error_outline</i>
+                                                        <b>Error Alert:</b> The raspberry pi camera not initialize.
+                                                        <button onclick="init()" class="btn btn-simple" style="color:white;">Try again</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+-->
+                                            <div id="livepreviewface" class="col-sm-10 col-sm-offset-1">
+                                                <img id="mjpg_face" alt="Live review face" class="img-rounded img-responsive img-raised">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="tab-pane" id="settings">
                                         <div class="col-sm-12">
@@ -348,6 +362,9 @@
             changeApiUrl("raspberrypi.local/picam");
             demo.showAlert('top', 'center', 'success', 'The Camera API has been reverted to the default API', 'notifications', 100);
         });
+        $('#face_btn').click(function(){
+            live_face();
+        });
     });
     //
     // Ajax Commands
@@ -501,6 +518,14 @@
         getApiUrl();
         $('#apiUrl').val(apiUrl);
         initcam();
+    }
+    
+    function live_face(){
+        $('#mjpg_face').attr("src", "http://localhost:5000/video_feed");
+    }
+    
+    function off_face(){
+        $('#mjpg_face').attr("src", "");
     }
 
     function changeApiUrl(url) {
