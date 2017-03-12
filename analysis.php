@@ -3,7 +3,7 @@ include 'db.php';
 extract($_POST);
 
 $fs_url = 'http://localhost:5000/image';
-$vars = 'src_url=' . $file_url . '&filename=' . $filename;
+$vars = 'src_url=' . $file_url . '&filename=' . $filename . '&thimg=' . $thimg;
 
 $ch = curl_init( $fs_url );
 curl_setopt( $ch, CURLOPT_POST, 1);
