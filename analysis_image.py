@@ -19,6 +19,7 @@ headers = {'Connection': 'keep-alive',
            'Cookie': 'stream_mode=MJPEG-Stream',
            'DNT': '1',
            }
+
 if len(sys.argv) > 2:
     db_360 = init_db()
     host = 'http://' + sys.argv[1] + '/get_media.php?type=image&file=' + sys.argv[2]

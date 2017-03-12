@@ -433,6 +433,7 @@
                                             <input type="hidden" name="filesize" value="' + json["filesize"][i] + '">\
                                             <input type="hidden" name="width" value="' + width + '">\
                                             <input type="hidden" name="height" value="' + height + '">\
+                                            <input type="hidden" name="file_url" value="' + fullPath + 'get_media.php?type=' + json["filetype"][i] + '&file=' + json["thimg"][i] + '">\
                                             </form>\
                                             <button style="margin-top:-50px;margin-right:3%" class="pull-right btn btn-danger btn-fab btn-fab-mini btn-round" onclick="deleteMedia(\'' + json["thimg"][i] + '\',\'' + json["filename"][i] + '\')"><i class="material-icons">delete</i></button>\
                                         </div>\
