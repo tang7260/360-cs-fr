@@ -35,9 +35,6 @@ class db{
     
     function get_image_face($name) {
         $jsonarray = array();
-        if($video_position==0){
-            $video_position=1;
-        }
         $sql = "SELECT * FROM photoface WHERE photo_name = '$name';";
         $result = mysqli_query($this->conn, $sql) 
             or die("Error in Selecting " . mysqli_error($this->conn));
