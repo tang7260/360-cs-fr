@@ -26,8 +26,10 @@ class db{
         $sql = "SELECT * FROM photo WHERE fileName = '$name';";
         $result = mysqli_query($this->conn, $sql) 
             or die("Error in Selecting " . mysqli_error($this->conn));
-
+        
         while($row =mysqli_fetch_assoc($result)){
+            $camrea = $this->get_camrea($row['recordBy']);
+            $row['recordBy'] = $camrea[0]['model'];
             $jsonarray[] = $row;
         }
         return $jsonarray;

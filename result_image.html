@@ -42,7 +42,6 @@
             background-size: contain;
             background-position: center;
         }
-    
         
         ::-webkit-scrollbar {
             width: 8px;
@@ -58,21 +57,21 @@
             background-color: #7e7e7e;
         }
         
-        .info{
+        .info {
             font-size: 17.5px;
             font-weight: 500;
             text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.30);
             color: #2c2c2c;
         }
         
-        .info_head{
+        .info_head {
             font-size: 16px;
             font-weight: 500;
             text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.30);
             color: #717070;
         }
         
-        .ctimes{
+        .ctimes {
             font-size: 15px;
             font-weight: 400;
             text-shadow: 0px 0px 11px rgba(150, 150, 150, 1);
@@ -182,7 +181,7 @@
                     <div style="margin:1.8%">
                         <h3 class="wow fadeInDown" style="margin-top:60px">Face Recognition Result - <span class='filename'></span></h3>
                         <div class="row" style="margin-top:0%">
-                            <div class="col-lg-8 col-md-8 col-sm-12 wow fadeIn">
+                            <div class="col-lg-12 col-md-12 col-sm-12 wow fadeIn">
                                 <div class="card card-stats">
                                     <div class="card-header wow fadeInDown" data-background-color="orange">
                                         <i class="material-icons">compare</i>
@@ -195,46 +194,23 @@
 
                                     <div class="card-footer wow fadeInDown">
                                         <div class="stats wow fadeInDown">
-                                             <div id='result_img'></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInDown">
-                                <div class="card card-stats">
-                                    <div class="card-header wow fadeInDown" data-background-color="green">
-                                        <i class="material-icons">info_outline</i>
-                                    </div>
-                                    <div class="card-content wow fadeInDown">
-                                        <!--                                <p class="category">Image</p>-->
-                                        <h3 class="title">Information</h3><br>
-                                        
-                                    </div>
-                                    <div class="card-footer wow fadeInDown">
-                                        <div class="stats">
-                                            <!--                                    <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>-->
-                                        <h4 class="title info_head">Filename: <span class='filename info'></span></h4>
-                                        <h4 class="title info_head">Record Datetime: <span class='datetime info'></span></h4>
-                                        <h4 class="title info_head">File size: <span class='size info'></span></h4>
-                                        <h4 class="title info_head">Total faces: <span class='total_face info'></span></h4>
-                                        <h4 class="title info_head">Video Duration: <span class='length info'></span></h4>
-                                        <h4 class="title info_head">Record by: <span class='recordby info'></span></h4>
-                                        <h4 class="title info_head">Width: <span class='width info'></span></h4>
-                                        <h4 class="title info_head">Height: <span class='height info'></span></h4>
+                                            <div id='result_img_div'>
+                                                <img id="result_img" class="img-responsive img-raised" style="max-height:75%;max-width:75%;" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInDown">
+                            <div class="col-lg-8 col-md-8 col-sm-8 wow fadeInDown">
                                 <div class="card card-stats">
                                     <div class="card-header wow fadeInDown" data-background-color="red">
                                         <i class="material-icons">face</i>
                                     </div>
                                     <div class="card-content wow fadeInDown">
                                         <!--                                <p class="category">Image</p>-->
-                                        <h3 class="title">The face in the image </h3><br>
+                                        <h3 class="title">The face in the image </h3>
+                                        <br>
                                     </div>
 
                                     <div id="face" class="wow fadeInDown" style="max-height:62vh;overflow-y: auto;">
@@ -242,7 +218,31 @@
                                 </div>
                             </div>
 
-                            
+                            <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInDown">
+                                <div class="card card-stats">
+                                    <div class="card-header wow fadeInDown" data-background-color="green">
+                                        <i class="material-icons">info_outline</i>
+                                    </div>
+                                    <div class="card-content wow fadeInDown">
+                                        <!--                                <p class="category">Image</p>-->
+                                        <h3 class="title">Information</h3>
+                                        <br>
+
+                                    </div>
+                                    <div class="card-footer wow fadeInDown">
+                                        <div class="stats">
+                                            <!--                                    <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>-->
+                                            <h4 class="title info_head">Filename: <span class='filename info'></span></h4>
+                                            <h4 class="title info_head">Record Datetime: <span class='datetime info'></span></h4>
+                                            <h4 class="title info_head">File size: <span class='size info'></span></h4>
+                                            <h4 class="title info_head">Total faces: <span class='total_face info'></span></h4>
+                                            <h4 class="title info_head">Record by: <span class='recordby info'></span></h4>
+                                            <h4 class="title info_head">Width: <span class='width info'></span></h4>
+                                            <h4 class="title info_head">Height: <span class='height info'></span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </div>
@@ -308,53 +308,57 @@
 <script src="assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
 <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="assets/js/material.min.js" type="text/javascript"></script>
-<script src="assets/js/jquery-ui.min.js"></script>
-<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="assets/js/wow.min.js" type="text/javascript"></script>
 
 <!--  Charts Plugin -->
-<script src="assets/js/chartist.min.js"></script>
+<script src="assets/js/chartist.min.js" type="text/javascript"></script>
 
 <!--  Notifications Plugin    -->
-<script src="assets/js/bootstrap-notify.js"></script>
+<script src="assets/js/bootstrap-notify.js" type="text/javascript"></script>
 
 <!-- Material Dashboard javascript methods -->
-<script src="assets/js/material-dashboard.js"></script>
-<script src="assets/js/demo.js"></script>
-<script src="assets/js/face.js"></script>
-<script>
-    var lab = [];
-    var ser = [];
-    var pos = [];
-    var faceImg = [];
+<script src="assets/js/material-dashboard.js" type="text/javascript"></script>
+<script src="assets/js/face.js" type="text/javascript"></script>
+<script type="text/javascript">
+    
+    function getParameterByName(name, url) {
+        if (!url) {
+            url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
 
-    function getResult() {
-        $.getJSON("get_result.php?type=video&filename=demo7.mp4", function (result) {
-            $.each(result['result_data'], function (i, v) {
-                lab.push(v['video_position_str']);
-                ser.push(v['total_face']);
-                pos.push(parseInt(v['total_face']));
-                faceImg.push(v['faceimg']);
-            });
+    function getResult(img) {
+        $.getJSON("get_result.php?type=image&filename=" + img , function (result) {
+
             $.each(result["file_info"], function (i, v) {
-            $('.filename').html(v["fileName"]);
-            $('.datetime').html(v["recordDate"]);
-            $('.size').html(v["fileSize"]);
-            $('.length').html(v["duration"]+'s');
-            $('.recordby').html(v["recordBy"]);
-            $('.fps').html(v["fps"]);
-            $('.width').html(v["width"]);
-            $('.height').html(v["height"]);
-            $('.avgface').html("");
+                $('.filename').html(v["fileName"]);
+                $('.datetime').html(v["recordDate"]);
+                $('.size').html(v["fileSize"]);
+                $('.length').html(v["duration"] + 's');
+                $('.recordby').html(v["recordBy"]);
+                $('.width').html(v["width"]);
+                $('.height').html(v["height"]);
+                $('.total_face').html(v["totalFace"]);
             });
-            face.initFaceDiv(faceImg,lab);
+            face.initFacePicDiv(result["result_data"]);
         });
     }
 
     $(document).ready(function () {
         new WOW().init();
-        getResult();
-       
-       
+        img = getParameterByName('img');
+        $('#result_img').attr('src', 'media/result/'+img+'_result.jpg');
+        getResult(img);
+
+
     });
 </script>
+
 </html>

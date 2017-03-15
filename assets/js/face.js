@@ -66,7 +66,6 @@ face = {
     },
     initFacePicDiv: function(arr){
         enddiv = '<div class="card-footer"></div>';
-        divid = 'faceimg' + i ;
         faceImgEle = '<div class="card-footer">\
                             <div class="stats">\
                             <div id="face_img">\
@@ -74,7 +73,7 @@ face = {
                         </div>\
                     </div>';
             $('#face').prepend(faceImgEle).fadeIn(300);
-        $.each(arr[i],function(j, x){
+        $.each(arr,function(j, x){
             imgdiv = '<div style="width:15%;"><img class="img-responsive img-raised" src="'+ x['file_path'] + x['img_name'] +'" /></div>\n'
             $('#face_img').prepend(imgdiv).fadeIn(999);;
         });
