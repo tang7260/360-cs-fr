@@ -91,7 +91,7 @@ class db{
         if($video_position==0){
             $video_position=1;
         }
-        $sql = "SELECT pos_face_no, img_name, file_path FROM videoface WHERE video_name = '$name' AND video_position = '$video_position';";
+        $sql = "SELECT pos_face_no, name, percentage, faceStrID, confidence, img_name, file_path FROM videoface WHERE video_name = '$name' AND video_position = '$video_position';";
         $result = mysqli_query($this->conn, $sql) 
             or die("Error in Selecting " . mysqli_error($this->conn));
 
